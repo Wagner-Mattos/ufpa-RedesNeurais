@@ -1,0 +1,36 @@
+-Na fase de determinação do modelo chame o arquivo (atividade1)
+
+-Apos o modelo escolhido, garanta que a matriz A esta no worspace e chame o
+script erroteste.
+Atenção! O escript erro teste deve ser invocado uma única vez!
+
+Obs. Para o caso dos modelos polinomias você deve escolher a ordem do polinomio
+que achar apropriada. Perceba que de modo geral o aumento da ordem do polinômio
+deve produzir redução do erro de treinamento. Mas não vale escolher a ordem com ajuda
+do desempenho no conjunto de teste.
+
+
+OPCIONAL PARA ESTA ATIVIDADE
+Mas você pode, por exemplo, resevar uma parte do seu conjunto de treinamento para "simular"
+um conjunto de teste. Neste caso você avaliaria seus modelos neste conjunto de teste "fictício"
+e escolheria o de menor erro. Este conjunto que foi deixado à parte (retirado do conjunto de treinamento)
+para testar os modeloS é denominado de conjunto de validação.
+
+Analogia: num cursinho pré-enem, as aulas são o treinamento. Os simulados são o 
+conjunto de validação, o enem o teste.
+
+Algoritmo para uso do conjunto de validação
+ 
+   faça uma redistribuição aleatória dos pares (x(i),d(i)) no conjunto de treinamento
+   separe o conjunto de treinamento em duas partes A e B
+   para cada modelo candidado faça
+      ajuste o i-ésimo modelo com base no conjunto A;
+      armazene o i-ésimo erro de treinamento
+      calcule o erro do i-ésimo modelo sobre o conjunto B (validação)
+      armazene o i-ésimo erro de validação
+   fim para
+   escolha o modelo que produziu o menor erro de validação
+   calcule o erro do modelo escolhido sobre o conjunto de teste
+
+OBS. Nas matrizes X e d que eu passei a vocês eu ordenei a variável x e os valores de d correspondentes
+acompanharam esta ordenação. Isso foi feito para evitar que um plot com linhas contínuas ficasse "maluco".
